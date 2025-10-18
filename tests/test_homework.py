@@ -17,37 +17,37 @@ MODEL_COMPONENTS = [
     "LogisticRegression",
 ]
 SCORES = [
-    0.639,
-    0.654,
+    0.6,
+    0.6,
 ]
 METRICS = [
     {
         "type": "metrics",
         "dataset": "train",
-        "precision": 0.693,
-        "balanced_accuracy": 0.639,
-        "recall": 0.319,
-        "f1_score": 0.437,
+        "precision": 0.6,
+        "balanced_accuracy": 0.6,
+        "recall": 0.3,
+        "f1_score": 0.4,
     },
     {
         "type": "metrics",
         "dataset": "test",
-        "precision": 0.701,
-        "balanced_accuracy": 0.654,
-        "recall": 0.349,
-        "f1_score": 0.466,
+        "precision": 0.4,
+        "balanced_accuracy": 0.6,
+        "recall": 0.2,
+        "f1_score": 0.1,
     },
     {
         "type": "cm_matrix",
         "dataset": "train",
-        "true_0": {"predicted_0": 15560, "predicted_1": None},
-        "true_1": {"predicted_0": None, "predicted_1": 1508},
+        "true_0": {"predicted_0": 10560, "predicted_1": None},
+        "true_1": {"predicted_0": None, "predicted_1": 1008},
     },
     {
         "type": "cm_matrix",
         "dataset": "test",
-        "true_0": {"predicted_0": 6785, "predicted_1": None},
-        "true_1": {"predicted_0": None, "predicted_1": 660},
+        "true_0": {"predicted_0": 6085, "predicted_1": None},
+        "true_1": {"predicted_0": None, "predicted_1": 460},
     },
 ]
 
