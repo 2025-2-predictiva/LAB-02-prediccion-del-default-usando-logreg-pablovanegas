@@ -210,7 +210,7 @@ def optimize_hyperparameters(pipeline, x_train, y_train):
     
     grid_search.fit(x_train, y_train)
     
-    return grid_search.best_estimator_
+    return grid_search
 
 
 def save_model(model, filepath):
@@ -324,10 +324,12 @@ def main():
     pipeline = create_pipeline(x_train)
     
     print("Paso 4: Optimizando hiperparámetros...")
-    best_model = optimize_hyperparameters(pipeline, x_train, y_train)
-    
+    grid_search_model = optimize_hyperparameters(pipeline, x_train, y_train)
+    best_model = grid_search_model.best_estimator_
+    print(f"Mejores parámetros: {grid_search_model.best_params_}")
+
     print("Paso 5: Guardando modelo...")
-    save_model(best_model, 'files/models/model.pkl.gz')
+    save_model(grid_search_model, 'files/models/model.pkl.gz')
     
     print("Paso 6: Calculando métricas...")
     train_metrics, test_metrics = calculate_metrics(best_model, x_train, y_train, x_test, y_test)
